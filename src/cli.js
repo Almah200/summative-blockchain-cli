@@ -42,8 +42,9 @@ function createNewPayments() {
     const amount = readlineSync.question('Enter the amount: ');
     const paymentId = readlineSync.question('Enter the payment ID: ');
     const studentId = readlineSync.question('Enter the student ID: ');
+    const sessionId = readlineSync.question('Enter  the sessionId: ');
 
-    bitcoin.createNewTransaction(amount, paymentId, studentId);
+    bitcoin.createNewTransaction(amount, paymentId, studentId, sessionId);
     console.log('Payment created successfully!');
 
     const more = readlineSync.question('Do you want to add another payment? (yes/no): ');

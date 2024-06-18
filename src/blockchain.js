@@ -6,7 +6,7 @@ function Blockchain() {
   this.pendingTransactions = [];
 
   // Create genesis block
-  this.createNewBlock(0, '0', '0');
+  this.createNewBlock('This is Agenesis block with nounce of 0', '0', '0');
 }
 
 // Function to create a new block
@@ -32,11 +32,12 @@ Blockchain.prototype.getLastBlock = function () {
 };
 
 // Create a new transaction
-Blockchain.prototype.createNewTransaction = function (amount, paymentId, studentId) {
+Blockchain.prototype.createNewTransaction = function (amount, paymentId, studentId, sessionId) {
   const newPayment = {
     amount: amount,
     paymentId: paymentId,
     studentId: studentId,
+    sessionId: sessionId,
   };
   this.pendingTransactions.push(newPayment);
   return this.getLastBlock().index + 1;
